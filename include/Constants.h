@@ -11,6 +11,8 @@ const int MOTION_MICROSTEPS = 16;
 
 const float REVS_TO_DIST = 39.37; // distance per full revolution of the guide motor (mm)
 const int MOTION_REDUCTION = 1; // Reduction ration for the spindle
+const float CONSTANT_ADD = 0.1605572;
+const float SLOPE = 0.00625477;
 
 // Board inputs
 const int LIMIT_SWITCH_PIN = 27;

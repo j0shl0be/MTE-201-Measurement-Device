@@ -62,7 +62,6 @@ bool checkButtonPress(int button){
 void prepMeasure(){
   //homes the cariage, resets steps then moves it back into place to measure. 
   motion.setHome(LIMIT_SWITCH_PIN, BACKWARD);
-  Serial.println(motion.getSteps());
   delay(500);
   motion.setTimePerStep(200);
   motion.moveDist(DIST_MEASURE_MAX, FORWARD);
@@ -75,14 +74,11 @@ void measureSteps(int limitSwitch){
   Serial.print("Measured ");
   Serial.print(motion.getSteps());
   Serial.print(" steps measured");
+  Serial.println("Length: ");
+  Serial.print(motion.stepToLength(), 1);
 
   delay(500);
   
   // move off of block after getting measurement
   motion.moveDist(3,FORWARD);
-
-
-
-  //Serial.println(motion.stepToLength());
-  //above line will give a calculated measurement for the 
 }

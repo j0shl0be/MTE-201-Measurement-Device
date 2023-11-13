@@ -111,6 +111,6 @@ int Stepper::getSteps() {
 }
 
 float Stepper::stepToLength(){
-    float tempLength = REVS_TO_DIST*(steps/stepsPerRev);
+    float tempLength = this->steps*SLOPE + CONSTANT_ADD;
     return tempLength;
 }
